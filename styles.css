@@ -1,0 +1,483 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  #background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video covers the entire background */
+    z-index: -1;
+    filter: blur(2px); /* Push the video behind all other content */
+}
+
+.alll {
+  height: 100%;
+  width: 100%;
+  padding-top: 15px;
+  display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+}
+
+main {
+  flex: 1;
+  margin-bottom: 500px;
+}
+
+.floating-btn {
+  position: fixed;
+  bottom: 20px;       /* Distance from the bottom */
+  right: 20px;        /* Distance from the right */
+  width: 60px;        /* Button width */
+  height: 60px;       /* Button height */
+  background-color: #563c5c;  /* Button color */
+        /* Icon color */
+
+  border-radius: 50%; /* Make it circular */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Add shadow for 3D effect */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;    /* Icon size */
+  cursor: pointer;
+  z-index: 1000;  
+  border: 3px solid #333;
+  transition: transform 0.3s ease;
+  /* Ensure it stays on top */
+}
+
+.floating-btn:hover {
+  transform: scale(1.2); /* Increase size by 20% */
+}
+
+
+.cart-icon {
+  height: 50%;
+  width: 50%;
+  animation: none;
+}
+
+.floating-btn:hover .cart-icon {
+  animation: move-left-right 0.5s ease-in-out 1; /* Infinite looping */
+}
+
+@keyframes move-left-right {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0; /* Remove default margin */
+    height: 100vh; /* Full viewport height */
+    
+  }
+  
+  header {
+    z-index: 2000;
+    position: fixed;
+    top:0;
+    left: 0;
+    right: 0;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #563c5c;
+    color: #fefefa;
+    font-family: 'Actor', sans-serif;
+    text-shadow: 
+    -0.1em -0.1em 0 #000,  /* Top-left */
+    0.1em -0.1em 0 #000,  /* Top-right */
+   -0.1em  0.1em 0 #000,  /* Bottom-left */
+    0.1em  0.1em 0 #000;  /* Bottom-right */
+    z-index: 5;
+    box-shadow: 2px 2px 0 #333, -2px -2px 0 #333, 3px 3px 0 #333; /* Jagged shadow effect */
+    border: 2px solid #333; /* Regular border */
+    border-radius: 12px;
+   
+  }
+  
+  .logo h1 {
+    font-size: 30px;
+    padding-left: 20px;
+    font-family: 'Abel', sans-serif;
+  }
+  
+  .nav-links {
+    list-style: none;
+  }
+  
+  .nav-links li {
+    display: inline;
+    margin: 0 15px;
+  }
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+  }
+  
+  .nav-links a:hover {
+    text-decoration: underline;
+  }
+  
+  .login button {
+    padding: 10px 20px;
+    background-color: #fff0f5;
+    border: none;
+    border-radius: 28px;
+    color: #563c5c;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    
+
+  }
+  
+  .login button:hover {
+    background-color: #bc8f8f;
+  }
+  
+  /* Search Bar Styling (Circular edges, icon, and division line) */
+  .search {
+
+    --padding: 4px;
+    position: relative;
+    width: max-content;
+    display: flex;
+    align-items: center;
+    padding: var(--padding);
+    border-radius: 28px;
+    background-color: #fff0f5;
+    width: 600px;
+    z-index: 1;
+    border: 2px solid #333; /* Regular border */
+    border-radius: 12px;
+    box-shadow: 2px 2px 0 #333, -2px -2px 0 #333, 3px 3px 0 #333; 
+    text-shadow: none;
+  }
+
+  .search-input {
+    font-size: 16px;
+    font-family: 'Lexend', sans-serif;
+    color: #333333;
+    margin-left: var(--padding);
+    outline: none;
+    border: none;
+    background: transparent;
+    flex: 1;
+  }
+
+  .search-input::placeholder {
+    color: rgba(0,0,0,.25);
+  }
+
+  .material-symbols-outlined {
+    color: #563c5c;
+    font-size: 24px; 
+  }
+  
+
+
+
+.thin-rectangle {
+    position: fixed;
+    top:0;
+    left: 0;
+    right: 0;
+    align-items: center;
+    width: 100%;
+    height: 85px; /* Thin height */
+    background-color: #bc8f8f; /* Darker shade */
+    border-radius: 0 0 10px 10px; /* Bottom corners rounded */
+    margin-top: 0; /* Remove any space between header and rectangle */
+    box-sizing: border-box; /* Ensures the width includes padding/margins */
+    z-index: 1;
+}
+
+
+
+
+
+
+.background {
+    height: 100vh; /* Full viewport height */
+    padding-top: 450px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+}
+
+.logo-container {
+    text-align: center; /* Center align text */
+    margin-bottom: 20px; /* Space between logo/tagline and tiles */
+    margin-top: 100px;
+}
+
+.logo {
+    font-size: 48px; /* Adjust as needed */
+    font-weight: bold; /* Make it bold */
+    color: #bc8f8f; /* Change color as needed */
+    font-family: 'Abel', sans-serif;
+    
+}
+.logo2 {
+  font-size: 70px; /* Adjust as needed */
+  font-weight: bold; /* Make it bold */
+  color: #bc8f8f; /* Change color as needed */
+  font-family: 'Abel', sans-serif;
+  text-shadow: 
+    -0.1rem -0.1rem 0 #000,  /* Top-left */
+    0.1rem -0.1rem 0 #000,  /* Top-right */
+   -0.1rem  0.1rem 0 #000,  /* Bottom-left */
+    0.1rem  0.1rem 0 #000;  /* Bottom-right */
+  
+  
+
+}
+
+.tagline {
+    font-size: 24px; /* Adjust as needed */
+    color: #fff; /* Change color as needed */
+    margin-top: 10px; /* Space between logo and tagline */
+    font-family: 'Abel', sans-serif;
+    color: #bc8f8f;
+    margin-bottom: 100px;
+}
+
+.tiles-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 20px; /* Space between tiles */
+    width: 80%; /* Adjust width as needed */
+}
+
+.tile {
+    background-color: #fff0f5; 
+    color: #bc8f8f;/* Background color for tiles */
+    border: 3px solid #333333;
+    border-radius: 15px; /* Rounded corners */
+    padding: 20px; /* Padding inside tiles */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    display: flex;
+    flex-direction: column; /* Align content vertically */
+    align-items: center; /* Center content horizontally */
+    justify-content: center; /* Center content vertically */
+    height: 200px; /* Set a fixed height for tiles */
+}
+
+
+.caro-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  margin-right: 20px;
+
+
+}
+
+
+
+.left-image {
+  width: 250px; /* Set a fixed width for the left image */
+  height: auto; /* Maintain aspect ratio */
+  margin-left: 20px; /* Space between the image and carousel */
+}
+
+.carousel {
+  overflow-x: auto; /* Enable horizontal scrolling */
+  white-space: nowrap; /* Prevent line breaks */
+  border: none; /* Optional: Add a border to the carousel */
+  border-radius: 28px;
+  padding: 10px; /* Optional: Add padding for better spacing */
+  margin-left: 300px;
+  margin-bottom: 50px;
+  background-color: #ebdde2;
+  z-index: 1;
+  transition: transform 0.3s ease; /* Smooth transition for scrolling */
+  
+  
+}
+.caro-container::before {
+  content: '';
+  position: absolute;
+  width: 1500px; /* Same width as front shape */
+  height: 150px; /* Same height as front shape */
+  background-color: #cbbdc2; /* Color of the background shape */
+  border-radius: 20px; /* Same border-radius for rounded edges */
+  bottom: 40px; /* Offset from bottom */
+  right: -570px; /* Offset from right */
+  z-index: 0; /* Ensure this shape is behind */
+}
+
+.carousel-inner {
+  display: flex; /* Use flexbox for horizontal layout */
+}
+
+.carousel-item {
+  display: inline-block; /* Align images in a row */
+  text-align: center; /* Center the caption text */
+  margin-right: 100px; /* Space between carousel items */
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.carousel-item img {
+  width: 200px; /* Set a fixed width for carousel images */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.arrow {
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1; /* Ensure buttons are above carousel */
+}
+
+.caption {
+  margin-top: 5px; /* Space between the image and caption */
+  font-size: 14px; /* Adjust font size as needed */
+  color: #333; /* Set caption text color */
+}
+
+
+
+
+
+
+/* General footer styling */
+.footer {
+  
+  
+  padding: 40px;
+  
+  text-align: center;
+  background-color: #563c5c;
+    color: #fefefa;
+    font-family: 'Actor', sans-serif;
+    text-shadow: 
+    -0.1rem -0.1rem 0 #000,  /* Top-left */
+    0.1rem -0.1rem 0 #000,  /* Top-right */
+   -0.1rem  0.1rem 0 #000,  /* Bottom-left */
+    0.1rem  0.1rem 0 #000;  /* Bottom-right */
+    z-index: 5;
+    box-shadow: 2px 2px 0 #333, -2px -2px 0 #333, 3px 3px 0 #333; /* Jagged shadow effect */
+    border: 2px solid #333; /* Regular border */
+    border-radius: 12px;
+}
+
+/* Back to top button styling */
+.back-to-top {
+  padding-bottom: 20px;
+}
+
+.back-to-top a {
+  color: #ffffff;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+/* Footer sections */
+.footer-sections {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+/* Individual footer columns */
+.footer-column {
+  flex-basis: 23%;
+  padding: 10px;
+  text-align: left;
+}
+
+/* Column titles */
+.footer-column h3 {
+  font-size: 18px;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+/* Links inside columns */
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+  color: #dddddd;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.footer-column ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Footer bottom section */
+.footer-bottom {
+  border-top: 2px solid #444;
+  
+  padding-top: 20px;
+}
+
+.footer-bottom p {
+  font-size: 12px;
+  margin: 0;
+}
+
+.legal-links {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0;
+  display: flex;
+  justify-content: center;
+}
+
+.legal-links li {
+  margin: 0 10px;
+}
+
+.legal-links li a {
+  color: #dddddd;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.legal-links li a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-sections {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .footer-column {
+      flex-basis: 100%;
+      text-align: center;
+  }
+}
